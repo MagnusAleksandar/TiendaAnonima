@@ -15,16 +15,11 @@ class ProductoDAO{
     }
     
     public function consultarTodos(){
-        return "SELECT idProducto, nombre, cantidad, precioCompra, precioVenta, Marca_idMarca, Categoria_idCategoria FROM Producto";
+        return "select idProducto, nombre, cantidad, precioCompra, precioVenta, Marca_idMarca 
+                from Producto";
     }
-
-    public function consultarMarca($idMarca){
-        return "SELECT nombre FROM Marca WHERE idMarca = $idMarca";
-    }
-
-    public function consultarCategoria($idCategoria){
-        return "SELECT nombre FROM Categoria WHERE idCategoria = $idCategoria";
-    }
+    
+    
 }
 
 ?>

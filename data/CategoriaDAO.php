@@ -8,10 +8,11 @@ class CategoriaDAO{
         $this -> nombre = $nombre;
     }
     
-    public function consultarTodas(){
-        return "select idCategoria, nombre from Categoria";
+    public function consultarTodos(){
+        return "select idCategoria, nombre
+                from Categoria
+                order by nombre asc";
     }
-    
 }
 
 ?>

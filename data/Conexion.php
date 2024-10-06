@@ -23,6 +23,10 @@ class Conexion{
     public function cerrarConexion(){
         $this -> mysqlConexion -> close();
     }
+    
+    public function numeroFilas(){
+        return $this -> resultado -> num_rows;
+    }
 }
 
 ?>

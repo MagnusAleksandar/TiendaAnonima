@@ -32,38 +32,35 @@ require ("logic/Marca.php");
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
 						href="#" role="button" data-bs-toggle="dropdown"
-						aria-expanded='false'>Marcas</a>
+						aria-expanded="false">Marca</a>
 						<ul class="dropdown-menu">
-							<?php
-							$marca = new Marca();
-							$listaMarcas = $marca->consultarTodasMarcas();
-							foreach ($listaMarcas as $marcaActual){
-								echo "<li><a class='dropdown-item' href='#'>" . $marcaActual -> getNombre() . "</a></li>";
-							}
-							?>
+                            <?php
+                            $marca = new Marca();
+                            $marcas = $marca->consultarTodos();
+                            foreach ($marcas as $marcaActual) {
+                                echo "<li><a class='dropdown-item' href='#'>" . $marcaActual->getNombre() . "</a></li>";
+                            }
+                            ?>
 						</ul></li>
 				</ul>
-
 				<ul class="navbar-nav me-auto">
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
 						href="#" role="button" data-bs-toggle="dropdown"
-						aria-expanded='false'>Categorias</a>
+						aria-expanded="false">Categoria</a>
 						<ul class="dropdown-menu">
-							<?php
-							$categoria = new Categoria();
-							$listaCategorias = $categoria->consultarTodasCategorias();
-							foreach ($listaCategorias as $categoriaActual){
-								echo "<li><a class='dropdown-item' href='#'>" . $categoriaActual -> getNombre() . "</a></li>";
-							}
-							?>
+                            <?php
+                            $categoria = new Categoria();
+                            $categorias = $categoria->consultarTodos();
+                            foreach ($categorias as $categoriaActual) {
+                                echo "<li><a class='dropdown-item' href='#'>" . $categoriaActual->getNombre() . "</a></li>";
+                            }
+                            ?>
 						</ul></li>
 				</ul>
-
 				<ul class="navbar-nav">
 				<li class="nav-item"><a href="iniciarSesion.php" class="nav-link"
 					aria-disabled="true">Iniciar Sesion</a></li>
 				</ul>
-				
 			</div>
 		</div>
 	</nav>
@@ -71,14 +68,16 @@ require ("logic/Marca.php");
 		<div class="row mb-3">
 			<div class="col">
 				<div class="card border-primary">
-					<div class="card-header text-bg-info">Tienda Anonima</div>
+					<div class="card-header text-bg-info">
+						<h4>Tienda Anonima</h4>
+					</div>
 					<div class="card-body">
     					<?php
-    					$i=0;
+                        $i = 0;
                         $producto = new Producto();
                         $productos = $producto->consultarTodos();
                         foreach ($productos as $productoActual) {
-                            if($i%4 == 0){
+                            if ($i % 4 == 0) {
                                 echo "<div class='row mb-3'>";
                             }
                             echo "<div class='col-lg-3 col-md-4 col-sm-6' >";
@@ -88,18 +87,17 @@ require ("logic/Marca.php");
                             echo "<a href='#'>" . $productoActual->getNombre() . "</a><br>";
                             echo "Cantidad: " . $productoActual->getCantidad() . "<br>";
                             echo "Valor: $" . $productoActual->getPrecioVenta() . "<br>";
-							echo "Marca: " . $productoActual->getIdMarca() . "<br>";
-							echo "Categoria: " . $productoActual->getIdCategoria();
+                            echo "Marca: " . $productoActual->getMarca()->getNombre() . "<br>";
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
-                            
-                            if($i%4 == 3){
+                
+                            if ($i % 4 == 3) {
                                 echo "</div>";
                             }
-                            $i++;
+                            $i ++;
                         }
-                        if($i%4 != 0){
+                        if ($i % 4 != 0) {
                             echo "</div>";
                         }
                         ?>

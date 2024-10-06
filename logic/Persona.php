@@ -1,11 +1,13 @@
 <?php
+require_once ("./data/Conexion.php");
+require ("./data/AdministradorDAO.php");
 
 class Persona{
-    private $idPersona;
-    private $nombre;
-    private $apellido;
-    private $correo;
-    private $clave;
+    protected $idPersona;
+    protected $nombre;
+    protected $apellido;
+    protected $correo;
+    protected $clave;
 
     public function getIdPersona(){
         return $this->idPersona;
@@ -47,7 +49,7 @@ class Persona{
         $this->clave = $clave;
     }
     
-    public function Persona($idPersona, $nombre, $apellido, $correo, $clave){
+    public function __construct($idPersona, $nombre, $apellido, $correo, $clave){
         $this -> idPersona = $idPersona;
         $this -> nombre = $nombre;
         $this -> apellido = $apellido;
