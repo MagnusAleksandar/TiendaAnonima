@@ -4,9 +4,9 @@ if(isset($_GET["cerrarSesion"])){
     session_destroy();
 }
 
-require ("logica/Producto.php");
-require ("logica/Categoria.php");
-require ("logica/Marca.php");
+require ("logic/Producto.php");
+require ("logic/Categoria.php");
+require ("logic/Marca.php");
 ?>
 <html>
 <head>

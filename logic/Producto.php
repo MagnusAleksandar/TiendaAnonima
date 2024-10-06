@@ -1,6 +1,6 @@
 <?php
-require_once ("./persistencia/Conexion.php");
-require ("./persistencia/ProductoDAO.php");
+require_once ("./data/Conexion.php");
+require ("./data/ProductoDAO.php");
 
 class Producto{
     private $idProducto;

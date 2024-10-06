@@ -1,6 +1,6 @@
 <?php
-require_once ("./persistencia/Conexion.php");
-require ("./persistencia/MarcaDAO.php");
+require_once ("./data/Conexion.php");
+require ("./data/MarcaDAO.php");
 
 class Marca{
     private $idMarca;
