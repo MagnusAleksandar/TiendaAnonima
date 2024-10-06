@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(isset($_GET["cerrarSesion"])){
+    session_destroy();
+}
+
 require ("logica/Producto.php");
 require ("logica/Categoria.php");
 require ("logica/Marca.php");
@@ -12,13 +17,7 @@ require ("logica/Marca.php");
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col text-center mt-2">
-				<img src="img/logo.png" height="150" />
-			</div>
-		</div>
-	</div>
+<?php include ("encabezado.php");?>
 
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container">
