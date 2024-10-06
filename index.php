@@ -17,7 +17,7 @@ require ("logic/Marca.php");
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<?php include ("encabezado.php");?>
+	<?php include ("encabezado.php");?>
 
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container">
@@ -34,33 +34,36 @@ require ("logic/Marca.php");
 						href="#" role="button" data-bs-toggle="dropdown"
 						aria-expanded='false'>Marcas</a>
 						<ul class="dropdown-menu">
-						<?php
-						$marca = new Marca();
-						$listaMarcas = $marca->consultarTodasMarcas();
-						foreach ($listaMarcas as $marcaActual){
-							echo "<li><a class='dropdown-item' href='#'>" . $marcaActual -> getNombre() . "</a></li>";
-						}
-						?>
-						</ul>
-					</li>
+							<?php
+							$marca = new Marca();
+							$listaMarcas = $marca->consultarTodasMarcas();
+							foreach ($listaMarcas as $marcaActual){
+								echo "<li><a class='dropdown-item' href='#'>" . $marcaActual -> getNombre() . "</a></li>";
+							}
+							?>
+						</ul></li>
 				</ul>
-				
-				<ul class="navbar-nav">
+
+				<ul class="navbar-nav me-auto">
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
 						href="#" role="button" data-bs-toggle="dropdown"
 						aria-expanded='false'>Categorias</a>
 						<ul class="dropdown-menu">
-						<?php
-						$categoria = new Categoria();
-						$listaCategorias = $categoria->consultarTodasCategorias();
-						foreach ($listaCategorias as $categoriaActual){
-							echo "<li><a class='dropdown-item' href='#'>" . $categoriaActual -> getNombre() . "</a></li>";
-						}
-						?>
-						</ul>
-					</li>
+							<?php
+							$categoria = new Categoria();
+							$listaCategorias = $categoria->consultarTodasCategorias();
+							foreach ($listaCategorias as $categoriaActual){
+								echo "<li><a class='dropdown-item' href='#'>" . $categoriaActual -> getNombre() . "</a></li>";
+							}
+							?>
+						</ul></li>
 				</ul>
 
+				<ul class="navbar-nav">
+				<li class="nav-item"><a href="iniciarSesion.php" class="nav-link"
+					aria-disabled="true">Iniciar Sesion</a></li>
+				</ul>
+				
 			</div>
 		</div>
 	</nav>
