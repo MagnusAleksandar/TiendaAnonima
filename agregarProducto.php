@@ -11,7 +11,7 @@ $idCategoria = filter_input(INPUT_POST, 'categoria');
 if(isset($_POST["agregar"])){
     $producto = new Producto();
     // $_POST["idProd"], $_POST["nombreProd"], $_POST["cantProd"], null, $_POST["precVen"], $idMarca, $idCategoria, $_SESSION["id"]
-    if(!empty($_POST["idProd"]) || empty($_POST["nombreProd"]) || empty($_POST["cantProd"]) || $idMarca = null || $idCategoria = null || empty($_POST["precVen"])){
+    if(!empty($_POST["idProd"]) && !empty($_POST["nombreProd"]) && !empty($_POST["cantProd"]) && $idMarca != 'Seleccione una marca' && !$idCategoria != 'Seleccione una categoría' && !empty($_POST["precVen"])){
         if($producto -> agregarProducto($_POST["idProd"], $_POST["nombreProd"], $_POST["cantProd"], null, $_POST["precVen"], $idMarca, $idCategoria, $_SESSION["id"]))
             echo "<div class='alert alert-success' role='alert'>Producto agregado correctamente.</div>";
         
