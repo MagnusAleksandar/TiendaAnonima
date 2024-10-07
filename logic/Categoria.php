@@ -40,6 +40,16 @@ class Categoria{
         $conexion -> cerrarConexion();
         return $categorias;        
     }
+        
+    public function consultar(){
+        $conexion = new Conexion();
+        $conexion -> abrirConexion();
+        $categoriaDAO = new CategoriaDAO($this -> idCategoria);
+        $conexion -> ejecutarConsulta($categoriaDAO -> consultar());
+        $registro = $conexion -> siguienteRegistro();
+        $this -> nombre = $registro[0];
+        $conexion -> cerrarConexion();
+    } 
     
 }
 

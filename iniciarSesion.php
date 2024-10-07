@@ -1,7 +1,7 @@
 <?php
 session_start();
-require ("logica/Persona.php");
-require ("logica/Administrador.php");
+require ("logic/Persona.php");
+require ("logic/Administrador.php");
 $error = false;
 if(isset($_POST["autenticar"])){
     $administrador = new Administrador(null, null, null, $_POST["correo"], md5($_POST["clave"]));

@@ -1,8 +1,7 @@
 <?php
 
 class Conexion{
-    private $mysqlConexion;
-    private $resultado;
+    private $mysqlConexion, $resultado;
     
     public function abrirConexion(){
         $this -> mysqlConexion = new mysqli("localhost", "root", "", "tiendaanonima");
@@ -27,6 +26,7 @@ class Conexion{
     public function numeroFilas(){
         return $this -> resultado -> num_rows;
     }
+
 }
 
 ?>

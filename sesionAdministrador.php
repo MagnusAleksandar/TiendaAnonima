@@ -4,13 +4,13 @@ if(!isset($_SESSION["id"])){
     header("Location: iniciarSesion.php");
 }
 $id = $_SESSION["id"];
-require ("logica/Persona.php");
-require ("logica/Administrador.php");
+require ("logic/Persona.php");
+require ("logic/Administrador.php");
+require_once ("logic/Marca.php");
+require_once ("logic/Categoria.php");
+
 $administrador = new Administrador($id);
 $administrador -> consultar();
-if(isset($_POST["nuevoProd"])){
-      
-}
 ?>
 <html>
 <head>
@@ -38,7 +38,7 @@ if(isset($_POST["nuevoProd"])){
 						href="#" role="button" data-bs-toggle="dropdown"
 						aria-expanded="false">Producto</a>
 						<ul class="dropdown-menu">
-                            <li><a class='dropdown-item' href='nuevoProd'>Nuevo Producto</a></li>
+                            <li><a class='dropdown-item' href='agregarProducto.php'>Nuevo Producto</a></li>
 						</ul></li>
 				</ul>
 				<ul class="navbar-nav">

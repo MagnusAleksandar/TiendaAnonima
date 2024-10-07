@@ -9,9 +9,11 @@ class CategoriaDAO{
     }
     
     public function consultarTodos(){
-        return "select idCategoria, nombre
-                from Categoria
-                order by nombre asc";
+        return "SELECT idCategoria, nombre FROM Categoria";
+    }
+
+    public function consultar(){
+        return "SELECT nombre FROM categoria WHERE idCategoria = '" . $this -> idCategoria . "'";
     }
 }
 
